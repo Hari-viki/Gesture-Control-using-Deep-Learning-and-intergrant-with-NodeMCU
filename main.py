@@ -22,17 +22,14 @@ while 1:
     predict=model.predict( test_image )
     # print(predict)
     classes =np.argmax(predict)
-    text = (word[classes])      
-    # if classes==0:
-        
-    #     print(text)
+    text = (word[classes])     
     print(text)    
     cv2.putText(reta,text,(30,30),cv2.FONT_HERSHEY_SIMPLEX,1.25,(255,255,0),3)
     cv2.imshow('Gesture control', reta)  
     key=cv2.waitKey(1)
     
     if key==ord('q'):
-        Response=requests.get("https://iotcloud22.in/1265/post_value.php?value1="+text)
+        Response=requests.get("Paste Your Server id")
         print("HTTP Response : ",Response.status_code)
         break
 video.release()
